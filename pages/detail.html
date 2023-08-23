@@ -24,7 +24,7 @@
     />
   </head>
   <body>
-    <nav class="bg-cyan-400 border-gray-200">
+    <nav class="bg-teal-500 border-gray-200">
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
       >
@@ -170,13 +170,22 @@
       </div>
     </nav>
 
+    <div
+      class="flex items-center justify-center h-[150px] gap-2 text-xl bg-gray-100"
+    >
+      <a href="../index.html">Home</a>
+      <span>/</span>
+      <a href="../pages/detail.html">Product Details</a>
+    </div>
+
     <div class="container px-4 mx-auto py-10">
-      <h3 class="text-center text-4xl text-slate-800 mb-20 font-bold">
-        Product Details
-      </h3>
+      <h3
+        id="productName"
+        class="text-center text-4xl text-slate-800 mb-20 font-bold"
+      ></h3>
       <div
         id="productDetail"
-        class="grid grid-cols-[40%_auto] gap-10 max-w-[600px] m-auto"
+        class="grid grid-cols-[40%_auto] gap-10 max-w-[800px] m-auto"
       ></div>
     </div>
 
@@ -196,8 +205,11 @@
       const displayProductDetail = (data) => {
         const productDetail = document.getElementById("productDetail");
 
+        document.getElementById("productName").innerText = data.name;
+        document.title = `${data.name} | My Shop`;
+
         productDetail.innerHTML = `
-        <div class="border">
+        <div class="border bg-teal-100 p-10">
             <img class=" w-full aspect-square object-contain" src="${data.img}" alt="${data.name}" />    
         </div>
         <div>
@@ -205,7 +217,8 @@
             <p class="text-lg my-2"><span class="font-bold">Price:</span> ${data.price}</p>   
             <p class="text-lg"><span class="font-bold">Brand:</span> ${data.brand}</p>   
             <p class="text-lg my-2"><span class="font-bold">Tag:</span> ${data.tag}</p> 
-            <button class="bg-orange-500 text-white py-2 px-8">Add To Cart <i class="fa-solid fa-bag-shopping"></i></button>  
+            <p class="mb-3">Our desk organizer is made from 100% renewable bamboo, known for its durability and eco-friendliness. Feel good about reducing your environmental footprint.</p>
+            <button class="bg-teal-500 text-white py-2 px-8">Add To Cart <i class="fa-solid fa-bag-shopping"></i></button>  
         </div>
         `;
       };

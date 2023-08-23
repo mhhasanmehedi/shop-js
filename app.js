@@ -28,7 +28,7 @@ function displayCategory(data) {
 
   data.map((category) => {
     categoryList.innerHTML += `
-    <li  class="bg-white px-1 text-base cursor-pointer rounded-sm bg-orange-600/10 text-orange-500">${category.name}</li>
+    <li  class="bg-white px-1 text-base cursor-pointer rounded-sm border border-teal-500 ">${category.name}</li>
 `;
   });
 }
@@ -39,7 +39,7 @@ function displayBrand(data) {
 
   data.map((brands) => {
     brandList.innerHTML += `
-        <li onclick="getProductsData('products?brand=${brands.brand}')" class="bg-white px-1 text-base cursor-pointer rounded-sm bg-orange-600/10 text-orange-500">${brands.brand}</li>
+        <li onclick="getProductsData('products?brand=${brands.brand}')" class="bg-white px-1 text-base cursor-pointer rounded-sm border border-teal-500">${brands.brand}</li>
     `;
   });
 }
@@ -50,7 +50,7 @@ function displayTag(data) {
 
   data.map((tags) => {
     tagList.innerHTML += `
-        <li class="bg-white px-1 text-base cursor-pointer rounded-sm bg-orange-600/10 text-orange-500">${tags.tag}</li>
+        <li class="bg-white px-1 text-base cursor-pointer rounded-sm border border-teal-500">${tags.tag}</li>
     `;
   });
 }
@@ -64,8 +64,8 @@ function displayProduct(data) {
     productList.innerHTML += `
     <a href="./pages/detail.html?id=${
       product.id
-    }" class="block border border-cyan-300 p-2 rounded-md group">
-        <div class="relative overflow-hidden h-[200px] p-2 rounded-md text-center bg-cyan-200">
+    }" class="block border border-emerald-500 p-2 rounded-md group">
+        <div class="relative overflow-hidden h-[200px] p-2 rounded-md text-center bg-teal-100">
             <span class="absolute right-1 top-1 z-10 bg-orange-600 text-white rounded-sm text-sm px-2">${
               product.badge !== undefined ? product.badge : ""
             }</span>
@@ -80,7 +80,7 @@ function displayProduct(data) {
         <p class="text-sm">Category:  ${product.categoryName}</p>
         <div class="flex items-center justify-between mt-3">
             <button class="bg-black text-white px-2 py-1">Add To Cart</button>
-            <span class="text-cyan-500 text-xl font-bold">$ ${
+            <span class="text-emerald-500 text-xl font-bold">$ ${
               product.price
             }</span>
         </div>
